@@ -66,6 +66,10 @@ Preparación: ${receta.preparacion}
               icon: const Icon(Icons.share, color: Colors.green),
               onPressed: _shareRecipe, // Botón de compartir
             ),
+            IconButton(
+              icon: const Icon(Icons.delete, color: Colors.red),
+              onPressed: onDelete, // Botón de compartir
+            ),
           ],
         ),
         children: <Widget>[

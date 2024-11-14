@@ -1,8 +1,0 @@
-flutter_native_splash:
-  color: "#603F26"  # Color de fondo de la pantalla de splash
-  color_dark: "#272727"  # Color de fondo en tema oscuro
-  image: "assets/icons/Coffeesplash.png"  # Ruta de la imagen para tema claro
-  image_dark: "assets/icons/Coffeesplash.png"  # Ruta de la imagen para tema oscuro
-
-  # Configuración opcional
-  web: false     # Desactiva el splash screen en la web

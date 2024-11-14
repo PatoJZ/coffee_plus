@@ -23,46 +23,91 @@ Coffee Time es una aplicación diseñada para los amantes del café que desean c
 
 ## Diagrama de Clases
 
-El diagrama de clases de la aplicación incluye las clases principales `Reciepe`, `RecipeCardWidget`, y `DatabaseHelper`:
+El diagrama de clases de la aplicación incluye las clases principales `Reciepe`, `RecipeCardWidget`, o `DatabaseHelper`:
 
-```plaintext
-┌───────────────────────────┐
-│        DatabaseHelper     │
-├───────────────────────────┤
-│ - _instance: DatabaseHelper │
-│ - _database: Database?    │
-├───────────────────────────┤
-│ + database: Future<Database> │
-│ + _initDatabase(): Future<Database> │
-│ + insertRecipe(recipe: Reciepe): Future<void> │
-│ + getAllRecipes(): Future<List<Reciepe>> │
-│ + updateRecipe(recipe: Reciepe): Future<void> │
-│ + deleteRecipe(id: int): Future<void> │
-└───────────────────────────┘
 
-┌───────────────────────────┐
-│         Reciepe           │
-├───────────────────────────┤
-│ + id: int?                │
-│ + nombre: String          │
-│ + descripcion: String     │
-│ + ingredientes: String    │
-│ + preparacion: String     │
-│ + imagenUrl: String       │
-│ + isAssetImage: bool      │
-│ + dateCreated: DateTime   │
-├───────────────────────────┤
-│ + toMap(): Map<String, dynamic> │
-│ + fromMap(Map<String, dynamic>): Reciepe │
-└───────────────────────────┘
+```mermaid
+classDiagram
 
-┌───────────────────────────┐
-│    RecipeCardWidget       │
-├───────────────────────────┤
-│ - receta: Reciepe         │
-│ - isFavorite: bool        │
-│ - onFavoriteToggle: void Function(Reciepe) │
-│ - onRate: void Function(Reciepe) │
-├───────────────────────────┤
-│ + build(BuildContext): Widget │
-└───────────────────────────┘
+class MainScreen {
+  - int _currentIndex
+  - List~Reciepe~ _recetas
+  + initState() void
+  + _loadRecipes() Future
+  + cargarRecetasDesdeJSON() Future~List~Reciepe~~
+  + build(context) Widget
+}
+
+class Main {
+  + main() void
+}
+
+class DatabaseHelper {
+  - Database? _database
+  + instance: DatabaseHelper
+  + database: Future~Database~
+  + _initDatabase() Future~Database~
+  + insertRecipe(recipe: Reciepe) Future~int~
+  + getAllRecipes() Future~List~Reciepe~~
+}
+
+class FeedbackScreen {
+  - List _questions
+  + _sendEmail(content: String) Future~void~
+  + build(context) Widget
+}
+
+class HomeScreen {
+  - List~Reciepe~ _recetas
+  + _loadAndSortRecetas() Future~void~
+  + build(context) Widget
+}
+
+class MyBaristaScreen {
+  - List~Reciepe~ _recetas
+  + initState() void
+  + _loadRecipes() Future
+  + build(context) Widget
+}
+
+class MyRecipesScreen {
+  - List~Reciepe~ _recetas
+  + initState() void
+  + _addNewRecipe() Future~void~
+  + _showRecipeForm() Future~Reciepe?~
+  + build(context) Widget
+}
+
+class Reciepe {
+  - int? id
+  - String nombre
+  - String descripcion
+  - String ingredientes
+  - String preparacion
+  - String imagenUrl
+  - bool isAssetImage
+  - DateTime dateCreated
+  + toMap() Map~String, dynamic~
+  + fromMap(Map~String, dynamic~) Reciepe
+  + fromJson(Map~String, dynamic~) Reciepe
+}
+
+class RecipeCardWidget {
+  - Reciepe receta
+  - bool isFavorite
+  - void Function(Reciepe) onFavoriteToggle
+  - void Function(Reciepe) onRate
+  + build(context) Widget
+}
+
+MainScreen --> Main
+MainScreen --> HomeScreen
+MainScreen --> MyBaristaScreen
+MainScreen --> MyRecipesScreen
+MainScreen --> FeedbackScreen
+MainScreen --> Reciepe
+MainScreen --> DatabaseHelper
+MyBaristaScreen --> Reciepe
+MyRecipesScreen --> Reciepe
+RecipeCardWidget --> Reciepe
+DatabaseHelper --> Reciepe
