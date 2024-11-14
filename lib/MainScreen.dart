@@ -1,4 +1,5 @@
 import 'package:coffee_plus/HomeScreen.dart';
+import 'package:coffee_plus/MyBaristaScreen.dart';
 import 'package:coffee_plus/MyRecipesScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:coffee_plus/FeedbackScreen.dart';
@@ -14,10 +15,9 @@ class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
   final List<Widget> _pages = [
     const HomeScreen(),
-    //MyBaristaScreen(),
+    const MyBaristaScreen(),
     const MyRecipesScreen(),
     const FeedbackScreen(),
-    //SettingsScreen(),
   ];
 
   void _onTabTapped(int index) {
@@ -38,7 +38,6 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.local_cafe), label: 'Mi Barista'),
           BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Mis Recetas'),
           BottomNavigationBarItem(icon: Icon(Icons.feedback), label: 'Opinión'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Configuración'),
         ],
       ),
     );

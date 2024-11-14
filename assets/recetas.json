@@ -1,0 +1,18 @@
+[
+    {
+      "nombre": "Café Dalgona Caliente",
+      "descripcion": "Una bebida cremosa y deliciosa.",
+      "ingredientes": "café soluble, azúcar, agua caliente, leche",
+      "Preparacion": "Pre",
+      "imagenUrl": "assets/images/vence.jpg"
+    },
+    {
+      "nombre": "Espresso",
+      "descripcion": "Café fuerte y concentrado.",
+      "ingredientes": "café molido",
+      "Preparacion": "Preparar en máquina espresso",
+      "imagenUrl": "assets/images/vence.jpg"
+    }
+
+
+]

@@ -1,11 +1,10 @@
+import 'package:coffee_plus/reciepe.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
 class DatabaseHelper {
-  static final DatabaseHelper _instance = DatabaseHelper._internal();
+  static final DatabaseHelper instance = DatabaseHelper._internal();
   static Database? _database;
-
-  factory DatabaseHelper() => _instance;
 
   DatabaseHelper._internal();
 
@@ -29,12 +28,33 @@ class DatabaseHelper {
             ingredients TEXT,
             steps TEXT,
             imagePath TEXT,
-            dateCreated TEXT,
-            timesPrepared INTEGER
+            isAssetImage INTEGER,
+            dateCreated TEXT
           )
           ''',
         );
       },
     );
+  }
+
+  Future<List<Reciepe>> getAllRecipes() async {
+    final db = await database;
+    final recipes = await db.query('recipes', orderBy: "dateCreated DESC");
+    return recipes.map((r) => Reciepe.fromMap(r)).toList();
+  }
+
+  Future<int> insertRecipe(Reciepe recipe) async {
+    final db = await database;
+    return await db.insert('recipes', recipe.toMap());
+  }
+
+  Future<int> updateRecipe(Reciepe recipe) async {
+    final db = await database;
+    return await db.update('recipes', recipe.toMap(), where: "id = ?", whereArgs: [recipe.id]);
+  }
+
+  Future<int> deleteRecipe(int id) async {
+    final db = await database;
+    return await db.delete('recipes', where: "id = ?", whereArgs: [id]);
   }
 }
