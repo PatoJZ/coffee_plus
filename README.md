@@ -6,8 +6,6 @@ Coffee Time es una aplicación diseñada para los amantes del café que desean c
 ## Link de presentación
 https://drive.google.com/file/d/1mznTSKetfhGnMyckMqnpTy9AHfj8qnmD/view?usp=sharing
 
-## Link del APK
-https://drive.google.com/file/d/1-mKEV1wPABivIb72aG8j50g_Ga0AYfKe/view?usp=sharing
 
 ## Funcionalidades
 
