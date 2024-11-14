@@ -3,6 +3,12 @@
 ## Descripción del Problema
 Coffee Time es una aplicación diseñada para los amantes del café que desean crear, almacenar y gestionar recetas de café. La aplicación permite a los usuarios explorar recetas predefinidas, crear nuevas recetas con fotos personalizadas, y organizarlas cronológicamente desde la más reciente hasta la más antigua. También incluye la funcionalidad de marcar recetas como favoritas, compartirlas, y recibir feedback de los usuarios.
 
+## Link de presentación
+https://drive.google.com/file/d/1mznTSKetfhGnMyckMqnpTy9AHfj8qnmD/view?usp=sharing
+
+## Link del APK
+https://drive.google.com/file/d/1-mKEV1wPABivIb72aG8j50g_Ga0AYfKe/view?usp=sharing
+
 ## Funcionalidades
 
 1. **Gestión de Recetas**:
