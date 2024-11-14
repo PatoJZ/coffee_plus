@@ -1,18 +1,30 @@
 [
-    {
-      "nombre": "Café Dalgona Caliente",
-      "descripcion": "Una bebida cremosa y deliciosa.",
-      "ingredientes": "café soluble, azúcar, agua caliente, leche",
-      "Preparacion": "Pre",
-      "imagenUrl": "assets/images/vence.jpg"
-    },
-    {
-      "nombre": "Espresso",
-      "descripcion": "Café fuerte y concentrado.",
-      "ingredientes": "café molido",
-      "Preparacion": "Preparar en máquina espresso",
-      "imagenUrl": "assets/images/vence.jpg"
-    }
-
-
+  {
+    "nombre": "Café Dalgona Caliente",
+    "descripcion": "Una bebida cremosa y deliciosa.",
+    "ingredientes": "café soluble, azúcar, agua caliente, leche",
+    "Preparacion": "Mezcla el café soluble, azúcar y agua caliente hasta que se haga una crema. Sirve con leche caliente.",
+    "imagenUrl": "assets/images/dalgona.jpg"
+  },
+  {
+    "nombre": "Espresso",
+    "descripcion": "Café fuerte y concentrado.",
+    "ingredientes": "café molido",
+    "Preparacion": "Preparar en máquina espresso.",
+    "imagenUrl": "assets/images/espresso.jpg"
+  },
+  {
+    "nombre": "Café Latte",
+    "descripcion": "Suave mezcla de café espresso con leche caliente.",
+    "ingredientes": "espresso, leche",
+    "Preparacion": "Agrega el espresso a una taza y vierte la leche caliente.",
+    "imagenUrl": "assets/images/latte.jpg"
+  },
+  {
+    "nombre": "Café Americano",
+    "descripcion": "Café suave, diluido con agua caliente.",
+    "ingredientes": "espresso, agua caliente",
+    "Preparacion": "Agrega el agua caliente al espresso.",
+    "imagenUrl": "assets/images/americano.jpg"
+  }
 ]

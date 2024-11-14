@@ -78,6 +78,10 @@ flutter:
    - assets/recetas.json
    - assets/images/vence.jpg
    - assets/feedback_questions.json
+   - assets/images/americano.jpg
+   - assets/images/latte.jpg
+   - assets/images/espresso.jpg
+   - assets/images/dalgona.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
